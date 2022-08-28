@@ -16,6 +16,8 @@ namespace DoctorWho.Db
         public DateTime EpisodeDate { get; set; }
         public Author author { get; set; }
         public Doctor doctor { get; set; }
+        public int AuthorId { get; set; }
+        public int DoctorId { get; set; }
         public string Notes { get; set; }
     }
 }
