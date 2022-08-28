@@ -18,7 +18,7 @@ namespace DoctorWho.Db
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Author>().HasData(
-                new Author { AuthorId=1, AuthorName = "Musab" },
+                new Author { AuthorId = 1, AuthorName = "Musab" },
                 new Author { AuthorId = 2,AuthorName = "Rayyan" },
                 new Author { AuthorId = 3,AuthorName = "Hamza" },
                 new Author { AuthorId = 4,AuthorName = "Bob" },
@@ -61,13 +61,14 @@ namespace DoctorWho.Db
 
                 );
             modelBuilder.Entity<EpisodeEnemy>().HasData(
-           new EpisodeEnemy {EpisodeEnemyId=1, EpisodeId = 1, EnemyId = 1 },
+           new EpisodeEnemy { EpisodeEnemyId = 1, EpisodeId = 1, EnemyId = 1 },
            new EpisodeEnemy { EpisodeEnemyId = 2, EpisodeId = 2, EnemyId = 2 },
            new EpisodeEnemy { EpisodeEnemyId = 3, EpisodeId = 3, EnemyId = 3 },
            new EpisodeEnemy { EpisodeEnemyId = 4, EpisodeId = 4, EnemyId = 4 },
            new EpisodeEnemy { EpisodeEnemyId = 5, EpisodeId = 5, EnemyId = 5 }
 
            );
+           
         }
     }
 }

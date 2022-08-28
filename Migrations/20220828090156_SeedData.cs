@@ -92,6 +92,7 @@ namespace DoctorWho.Db.Migrations
                     { 4, 4, 4 },
                     { 5, 5, 5 }
                 });
+
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

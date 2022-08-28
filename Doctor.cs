@@ -15,6 +15,5 @@ namespace DoctorWho.Db
         public DateTime FirstEpisodeDate { get; set;}
         public DateTime LastEpisodeDate { get; set; }
         public List<Episode> EpisodeList { get; set;}
-       
     }
 }
