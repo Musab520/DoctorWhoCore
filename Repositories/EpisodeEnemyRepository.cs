@@ -42,5 +42,15 @@ namespace DoctorWho.Db.Repositories
                 throw new ArgumentNullException("EpisodeEnemy trying to delete Cant be null");
             }
         }
+       public void AddEnemyToEpisode( int EpisodeId, int EnemyId)
+        {
+            Episode? episode = context.Find<Episode>(EpisodeId);
+            Enemy? enemy = context.Find<Enemy>(EnemyId);
+            if (episode != null && enemy != null)
+            {
+                context.episodesEnemies.Add(new EpisodeEnemy { EpisodeId = EpisodeId, EnemyId = EnemyId });
+                context.SaveChanges();
+            }
+        }
     }
 }

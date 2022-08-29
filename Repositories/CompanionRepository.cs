@@ -55,5 +55,9 @@ namespace DoctorWho.Db.Repositories
                 throw new ArgumentNullException("Author trying to delete Cant be null");
             }
         }
+        Companion? GetCompanionById( int CompanionId)
+        {
+            return context.companions.Find(CompanionId);
+        }
     }
 }

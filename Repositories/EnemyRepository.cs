@@ -55,5 +55,9 @@ namespace DoctorWho.Db.Repositories
                 throw new ArgumentNullException("Enemy trying to delete Cant be null");
             }
         }
+       public Enemy? GetEnemyById( int EnemyId)
+        {
+            return context.enemies.Find(EnemyId);
+        }
     }
 }
