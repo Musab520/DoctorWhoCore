@@ -4,13 +4,17 @@ namespace DoctorWho.Db
 {
     public class DoctorWhoCoreDbContext : DbContext
     {
-        DbSet<Episode> episodes { get; set; }
-        DbSet<Author>  authors { get; set; }
-        DbSet<Doctor> doctors { get; set; }
-        DbSet<Companion> companions { get; set; }
-        DbSet<Enemy> enemies { get; set; }
-        DbSet<EpisodeCompanion> episodesCompanions { get;set; }
-        DbSet<EpisodeEnemy> episodesEnemies { get; set; }
+       public DbSet<Episode> episodes { get; set; }
+        public DbSet<Author>  authors { get; set; }
+        public DbSet<Doctor> doctors { get; set; }
+        public DbSet<Companion> companions { get; set; }
+        public DbSet<Enemy> enemies { get; set; }
+        public DbSet<EpisodeCompanion> episodesCompanions { get;set; }
+        public DbSet<EpisodeEnemy> episodesEnemies { get; set; }
+        public DbSet<EpisodeSummaryCompanions> spSummariesEpisodesCompanions { get; set; }
+        public DbSet<EpisodeSummaryEnemies> spSummariesEpisodesEnemies { get; set; }
+        public DbSet<ViewEpisodes> viewEpisodes { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer("Data Source = (localdb)\\MSSQLLocalDB; Initial Catalog = DoctorWhoDB");
@@ -68,6 +72,10 @@ namespace DoctorWho.Db
            new EpisodeEnemy { EpisodeEnemyId = 5, EpisodeId = 5, EnemyId = 5 }
 
            );
+            modelBuilder.Entity<EpisodeSummaryCompanions>().HasNoKey();
+            modelBuilder.Entity<EpisodeSummaryEnemies>().HasNoKey();
+            modelBuilder.Entity<ViewEpisodes>().HasNoKey().ToView("viewEpisodes");
+
         }
     }
 }

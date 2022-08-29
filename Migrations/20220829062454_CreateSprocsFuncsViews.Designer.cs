@@ -4,6 +4,7 @@ using DoctorWho.Db;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DoctorWho.Db.Migrations
 {
     [DbContext(typeof(DoctorWhoCoreDbContext))]
-    partial class DoctorWhoCoreDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220829062454_CreateSprocsFuncsViews")]
+    partial class CreateSprocsFuncsViews
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -36,7 +38,7 @@ namespace DoctorWho.Db.Migrations
 
                     b.HasKey("AuthorId");
 
-                    b.ToTable("authors", (string)null);
+                    b.ToTable("authors");
 
                     b.HasData(
                         new
@@ -84,7 +86,7 @@ namespace DoctorWho.Db.Migrations
 
                     b.HasKey("CompanionId");
 
-                    b.ToTable("companions", (string)null);
+                    b.ToTable("companions");
 
                     b.HasData(
                         new
@@ -145,7 +147,7 @@ namespace DoctorWho.Db.Migrations
 
                     b.HasKey("DoctorId");
 
-                    b.ToTable("doctors", (string)null);
+                    b.ToTable("doctors");
 
                     b.HasData(
                         new
@@ -213,7 +215,7 @@ namespace DoctorWho.Db.Migrations
 
                     b.HasKey("EnemyId");
 
-                    b.ToTable("enemies", (string)null);
+                    b.ToTable("enemies");
 
                     b.HasData(
                         new
@@ -289,7 +291,7 @@ namespace DoctorWho.Db.Migrations
 
                     b.HasIndex("DoctorId");
 
-                    b.ToTable("episodes", (string)null);
+                    b.ToTable("episodes");
 
                     b.HasData(
                         new
@@ -374,7 +376,7 @@ namespace DoctorWho.Db.Migrations
 
                     b.HasIndex("EpisodeId");
 
-                    b.ToTable("episodesCompanions", (string)null);
+                    b.ToTable("episodesCompanions");
 
                     b.HasData(
                         new
@@ -429,7 +431,7 @@ namespace DoctorWho.Db.Migrations
 
                     b.HasIndex("EpisodeId");
 
-                    b.ToTable("episodesEnemies", (string)null);
+                    b.ToTable("episodesEnemies");
 
                     b.HasData(
                         new
