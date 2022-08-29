@@ -11,7 +11,7 @@ namespace DoctorWho.Db
         public int EpisodeId;
         public string AuthorName;
         public string DoctorName;
-        public string Enemies;
-        public string Companions;
+        public string EnemyNames;
+        public string CompanionNames;
     }
 }
