@@ -1,10 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System.Data;
+using System.Data.Entity.Infrastructure;
 
 namespace DoctorWho.Db
 {
     public class DoctorWhoCoreDbContext : DbContext
     {
-       public DbSet<Episode> episodes { get; set; }
+        public IDbConnection Connection => Database.GetDbConnection();
+        public DbSet<Episode> episodes { get; set; }
         public DbSet<Author>  authors { get; set; }
         public DbSet<Doctor> doctors { get; set; }
         public DbSet<Companion> companions { get; set; }
@@ -72,10 +75,9 @@ namespace DoctorWho.Db
            new EpisodeEnemy { EpisodeEnemyId = 5, EpisodeId = 5, EnemyId = 5 }
 
            );
-            modelBuilder.Entity<EpisodeSummaryCompanions>().HasNoKey();
-            modelBuilder.Entity<EpisodeSummaryEnemies>().HasNoKey();
-            modelBuilder.Entity<ViewEpisodes>().HasNoKey().ToView("viewEpisodes");
-
+         modelBuilder.Entity<EpisodeSummaryCompanions>().HasNoKey();
+         modelBuilder.Entity<EpisodeSummaryEnemies>().HasNoKey();
+         modelBuilder.Entity<ViewEpisodes>().HasNoKey().ToView("viewEpisodes");
         }
     }
 }
