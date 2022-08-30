@@ -11,10 +11,5 @@ namespace DoctorWho.Db
         public int AuthorId { get; set; }
         public string AuthorName { get; set; }
         public List<Episode> EpisodeList { get; set;}
-        public Author(int AuthorId,string AuthorName)
-        {
-           this.AuthorId = AuthorId;
-           this.AuthorName = AuthorName;   
-        }
     }
 }

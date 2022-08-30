@@ -11,11 +11,5 @@ namespace DoctorWho.Db
         public int EnemyId { get; set; }    
         public string EnemyName { get; set; }    
         public string Description { get; set; }
-        public Enemy(int EnemyId,string EnemyName,string Description)
-        {
-            this.EnemyId = EnemyId;
-            this.EnemyName = EnemyName;
-            this.Description = Description;
-        }
     }
 }
